@@ -1,0 +1,7 @@
+sudo: required
+services:
+  - docker
+
+script:
+  - docker build -t gnoa003/node .
+  - docker images gnoa003/node
