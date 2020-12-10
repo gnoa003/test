@@ -5,3 +5,12 @@ services:
 script:
   - docker build -t gnoa003/node .
   - docker images gnoa003/node
+
+before_deploy:
+  - docker login -u gnoa003 -p ZOOK4rag4phou!raix
+
+deploy:
+  provider: script
+  script: docker push gnoa003/node
+  on:
+    branch: master
